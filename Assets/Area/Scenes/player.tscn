@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cg6dwnt0ju2wj" path="res://Assets/Sprites/Main_player/Fire Wizard/Walk.png" id="5_iqb75"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0er46"]
-radius = 9.0
+radius = 6.0
 height = 64.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udsrf"]
@@ -279,20 +279,21 @@ animations = [{
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_0er46")
-jump_force = 200.0
+speed = 400.0
+jump_force = 250.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -35)
 shape = SubResource("CapsuleShape2D_0er46")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2, -26)
-zoom = Vector2(4, 4)
+position = Vector2(3, -44)
+offset = Vector2(0, -50)
+zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(14, -63)
+position = Vector2(9, -67)
+scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_lmg7l")
-animation = &"jump"
+animation = &"attack"
 autoplay = "idle"
-frame = 8
-frame_progress = 1.0

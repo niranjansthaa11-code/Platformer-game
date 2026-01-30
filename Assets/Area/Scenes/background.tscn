@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo8v142oahq4j"]
+
+[ext_resource type="Texture2D" uid="uid://ob8wcrxpo3yy" path="res://Assets/Sprites/01_sky_planet.png" id="1_dxfn8"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-10, -65.00001)
+scale = Vector2(1, 0.63148147)
+texture = ExtResource("1_dxfn8")
