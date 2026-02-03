@@ -280,7 +280,7 @@ animations = [{
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_0er46")
 speed = 400.0
-jump_force = 250.0
+jump_force = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -35)
