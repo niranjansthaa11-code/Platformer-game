@@ -7,10 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cy1isuo56pu7u" path="res://Assets/Sprites/Main_player/Fire Wizard/Run.png" id="4_34p3m"]
 [ext_resource type="Texture2D" uid="uid://cg6dwnt0ju2wj" path="res://Assets/Sprites/Main_player/Fire Wizard/Walk.png" id="5_iqb75"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0er46"]
-radius = 6.0
-height = 62.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_udsrf"]
 atlas = ExtResource("2_34p3m")
 region = Rect2(0, 0, 128, 128)
@@ -164,7 +160,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 2.0,
@@ -190,7 +186,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 0.9,
@@ -225,7 +221,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 2.0,
@@ -254,7 +250,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 2.0,
@@ -277,28 +273,33 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 12.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34p3m"]
+radius = 10.999999
+height = 58.000008
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_0er46")
 speed = 400.0
 jump_force = 400.0
 
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
+position = Vector2(10, -67.00001)
+scale = Vector2(1.03125, 1.03125)
+sprite_frames = SubResource("SpriteFrames_lmg7l")
+animation = &"attack"
+autoplay = "idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -35)
-shape = SubResource("CapsuleShape2D_0er46")
+position = Vector2(-0.9999995, -31)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_34p3m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3, -44)
 offset = Vector2(0, -50)
 zoom = Vector2(2, 2)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, -67)
-scale = Vector2(1.03125, 1.03125)
-sprite_frames = SubResource("SpriteFrames_lmg7l")
-animation = &"jump"
-autoplay = "idle"
-frame = 9
-frame_progress = 1.0
