@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var pivot: Node2D = $Pivot
 @onready var animated_sprite: AnimatedSprite2D = $Pivot/AnimatedSprite2D
 @onready var spwan_sprite=$AnimatedSprite2D1
+@onready var jump_sound:AudioStreamPlayer2D =$JumpSound
 
 ## --- State Variables ---
 var is_attacking: bool = false
@@ -56,6 +57,7 @@ func _physics_process(delta: float) -> void:
 func handle_jump() -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
+		jump_sound.play()
 
 func handle_movement() -> void:
 	var direction := Input.get_axis("left", "right")
