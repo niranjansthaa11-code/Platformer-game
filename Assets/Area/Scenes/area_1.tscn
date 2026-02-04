@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bc3k6xctt8j3j"]
+[gd_scene load_steps=15 format=3 uid="uid://bc3k6xctt8j3j"]
 
 [ext_resource type="Texture2D" uid="uid://csdub4aqmpcvv" path="res://Assets/Sprites/Tiles/Tile-Atlas 16x16.png" id="1_s6akc"]
 [ext_resource type="PackedScene" uid="uid://hbmyji07l7cr" path="res://Assets/Area/Scenes/player.tscn" id="2_61qy2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://p2d1nn8ni68" path="res://Assets/Area/Scenes/moving_platforms.tscn" id="4_eyujy"]
 [ext_resource type="FontFile" uid="uid://dvh0cmmo4y4wl" path="res://Assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="5_0j8ti"]
 [ext_resource type="PackedScene" uid="uid://dikuqririw5xo" path="res://Assets/Area/Scenes/music_control.tscn" id="6_ck07g"]
+[ext_resource type="PackedScene" uid="uid://bvqdymfomuwic" path="res://Assets/Area/Scenes/player_gf.tscn" id="7_d1d5t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqiyv"]
 texture = ExtResource("1_s6akc")
@@ -508,7 +509,7 @@ metadata/_edit_group_ = true
 position = Vector2(35, -89)
 
 [node name="Player" parent="." instance=ExtResource("2_61qy2")]
-position = Vector2(58, 2)
+position = Vector2(53, -34)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_hlyj4")]
 
@@ -549,3 +550,6 @@ Total_time = 0.8
 position = Vector2(2654, 183)
 curve = SubResource("Curve2D_w7nbb")
 Total_time = 2.0
+
+[node name="player_gf" parent="." instance=ExtResource("7_d1d5t")]
+position = Vector2(3323, -480)

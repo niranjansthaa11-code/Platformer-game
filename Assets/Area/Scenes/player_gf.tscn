@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvqdymfomuwic"]
+
+[ext_resource type="Texture2D" uid="uid://c20iteqnrfl3i" path="res://Assets/Sprites/gf_of_the player/Idle.png" id="1_2em0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlsn4"]
+atlas = ExtResource("1_2em0x")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87cbn"]
+atlas = ExtResource("1_2em0x")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n463"]
+atlas = ExtResource("1_2em0x")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wal17"]
+atlas = ExtResource("1_2em0x")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rvu2"]
+atlas = ExtResource("1_2em0x")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12x2t"]
+atlas = ExtResource("1_2em0x")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x83y"]
+atlas = ExtResource("1_2em0x")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upl11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlsn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87cbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n463")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wal17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rvu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12x2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x83y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="player_gf" type="CharacterBody2D"]
+
+[node name="piviot" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="piviot"]
+position = Vector2(-5, -64)
+scale = Vector2(1.031, 1.031)
+sprite_frames = SubResource("SpriteFrames_upl11")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.4200637
+flip_h = true
