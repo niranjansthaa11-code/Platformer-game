@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://hbmyji07l7cr"]
+[gd_scene load_steps=54 format=3 uid="uid://hbmyji07l7cr"]
 
 [ext_resource type="Script" uid="uid://dc36xdypsvrsu" path="res://Assets/Area/Scenes/player.gd" id="1_0er46"]
 [ext_resource type="Texture2D" uid="uid://1frsek8advj2" path="res://Assets/Sprites/Main_player/Fire Wizard/Idle.png" id="1_hww1u"]
@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://dop3r7inx0mpl" path="res://Assets/Sprites/Main_player/Fire Wizard/Jump.png" id="3_24n82"]
 [ext_resource type="Texture2D" uid="uid://cy1isuo56pu7u" path="res://Assets/Sprites/Main_player/Fire Wizard/Run.png" id="4_34p3m"]
 [ext_resource type="Texture2D" uid="uid://cg6dwnt0ju2wj" path="res://Assets/Sprites/Main_player/Fire Wizard/Walk.png" id="5_iqb75"]
+[ext_resource type="Texture2D" uid="uid://unpmjsriih" path="res://PNG/Explosion_5/Explosion_1.png" id="7_rokcs"]
+[ext_resource type="Texture2D" uid="uid://bqpvmg2ds6vx6" path="res://PNG/Explosion_5/Explosion_2.png" id="8_vyfjt"]
+[ext_resource type="Texture2D" uid="uid://daygha5mqru2t" path="res://PNG/Explosion_5/Explosion_3.png" id="9_1unn1"]
+[ext_resource type="Texture2D" uid="uid://bpjprncplopxo" path="res://PNG/Explosion_5/Explosion_4.png" id="10_6tm47"]
+[ext_resource type="Texture2D" uid="uid://cqn8fwh4n4y24" path="res://PNG/Explosion_5/Explosion_5.png" id="11_qu1u8"]
+[ext_resource type="Texture2D" uid="uid://b3646k2fpro4i" path="res://PNG/Explosion_5/Explosion_6.png" id="12_dm45r"]
+[ext_resource type="Texture2D" uid="uid://cfl0vmyn1gl0f" path="res://PNG/Explosion_5/Explosion_7.png" id="13_lb5q6"]
+[ext_resource type="Texture2D" uid="uid://d2ea67oqhnksy" path="res://PNG/Explosion_5/Explosion_8.png" id="14_mll8o"]
+[ext_resource type="Texture2D" uid="uid://deyt6byqgdn3p" path="res://PNG/Explosion_5/Explosion_9.png" id="15_xjdj7"]
+[ext_resource type="Texture2D" uid="uid://pbo0pkm5f65v" path="res://PNG/Explosion_5/Explosion_10.png" id="16_rhu6i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udsrf"]
 atlas = ExtResource("2_34p3m")
@@ -280,11 +290,48 @@ animations = [{
 radius = 10.999999
 height = 58.000008
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rokcs"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("7_rokcs")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_vyfjt")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_1unn1")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_6tm47")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_qu1u8")
+}, {
+"duration": 0.5,
+"texture": ExtResource("12_dm45r")
+}, {
+"duration": 0.5,
+"texture": ExtResource("13_lb5q6")
+}, {
+"duration": 0.5,
+"texture": ExtResource("14_mll8o")
+}, {
+"duration": 0.5,
+"texture": ExtResource("15_xjdj7")
+}, {
+"duration": 0.5,
+"texture": ExtResource("16_rhu6i")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D"]
 collision_mask = 768
 platform_on_leave = 2
 script = ExtResource("1_0er46")
-speed = 400.0
 jump_force = 400.0
 
 [node name="Pivot" type="Node2D" parent="."]
@@ -307,3 +354,12 @@ offset = Vector2(0, -50)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="AnimatedSprite2D1" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.99999905, -28.000006)
+scale = Vector2(0.13867186, 0.16875)
+sprite_frames = SubResource("SpriteFrames_rokcs")
+animation = &"spawn"
+autoplay = "spawn"
+frame = 9
+frame_progress = 1.0

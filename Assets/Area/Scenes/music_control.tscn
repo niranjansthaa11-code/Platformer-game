@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dikuqririw5xo"]
+
+[ext_resource type="FontFile" uid="uid://dvh0cmmo4y4wl" path="res://Assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_0d6se"]
+[ext_resource type="Script" uid="uid://cgcitl6683kqr" path="res://Assets/Scripts/music_box.gd" id="2_gcihj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CheckBox" type="CheckBox" parent="."]
+texture_filter = 2
+offset_left = -6.0
+offset_top = -19.0
+offset_right = 68.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("1_0d6se")
+button_pressed = true
+text = "Music"
+script = ExtResource("2_gcihj")
+
+[connection signal="toggled" from="CheckBox" to="CheckBox" method="_on_toggled"]

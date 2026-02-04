@@ -14,6 +14,10 @@ config/name="platformer_game"
 run/main_scene="uid://bc3k6xctt8j3j"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
+[autoload]
+
+MusicManager="*res://Assets/Area/Scenes/Music_Manager.tscn"
+
 [display]
 
 window/size/viewport_width=1080

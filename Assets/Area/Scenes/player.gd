@@ -8,9 +8,28 @@ extends CharacterBody2D
 
 @onready var pivot: Node2D = $Pivot
 @onready var animated_sprite: AnimatedSprite2D = $Pivot/AnimatedSprite2D
+@onready var spwan_sprite=$AnimatedSprite2D1
 
 ## --- State Variables ---
 var is_attacking: bool = false
+
+func _ready():
+	
+	spwan_sprite.show()
+	spwan_sprite.modulate.a =1 # this is fully visible due to this value 
+	animated_sprite.show()
+	animated_sprite.modulate.a = 0.0 # this is transparent i.e not visible 
+	is_attacking = true
+	spwan_sprite.play("spawn")
+	await spwan_sprite.animation_finished
+	
+	var tween = create_tween() 
+	tween.tween_property(spwan_sprite, "modulate:a", 0.0, 0.5)
+	tween.parallel().tween_property(animated_sprite, "modulate:a", 1.0, 0.5)
+	await tween.finished
+	spwan_sprite.hide()
+	animated_sprite.play("idle")
+	is_attacking = false
 
 func _physics_process(delta: float) -> void:
 	# 1. Apply Gravity

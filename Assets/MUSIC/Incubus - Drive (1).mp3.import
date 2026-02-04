@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cl6jr2ittw0db"
+path="res://.godot/imported/Incubus - Drive (1).mp3-9d0899f9bfefd350d3aa112a531c0935.mp3str"
+
+[deps]
+
+source_file="res://Assets/MUSIC/Incubus - Drive (1).mp3"
+dest_files=["res://.godot/imported/Incubus - Drive (1).mp3-9d0899f9bfefd350d3aa112a531c0935.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
