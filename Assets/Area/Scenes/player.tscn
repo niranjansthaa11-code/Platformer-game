@@ -281,6 +281,8 @@ radius = 10.999999
 height = 58.000008
 
 [node name="player" type="CharacterBody2D"]
+collision_mask = 768
+platform_on_leave = 2
 script = ExtResource("1_0er46")
 speed = 400.0
 jump_force = 400.0
@@ -303,3 +305,5 @@ shape = SubResource("CapsuleShape2D_34p3m")
 position = Vector2(3, -44)
 offset = Vector2(0, -50)
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
