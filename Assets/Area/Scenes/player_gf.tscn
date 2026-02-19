@@ -63,7 +63,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4n463"]
-size = Vector2(43.25, 65)
+size = Vector2(43.25, 109.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upl11"]
 atlas = ExtResource("2_tlsn4")
@@ -174,14 +174,14 @@ flip_h = true
 [node name="Area2D" type="Area2D" parent="piviot"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piviot/Area2D"]
-position = Vector2(-14.375, -31)
+position = Vector2(-14.375, -53.25)
 shape = SubResource("RectangleShape2D_4n463")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-10.000004, -73)
 scale = Vector2(0.31451616, 0.31451613)
 sprite_frames = SubResource("SpriteFrames_nhdq1")
-frame_progress = 0.63361144
+frame_progress = 0.70072794
 
 [node name="Romantic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_4n463")
