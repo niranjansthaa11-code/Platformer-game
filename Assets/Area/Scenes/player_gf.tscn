@@ -1,6 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvqdymfomuwic"]
+[gd_scene load_steps=27 format=3 uid="uid://bvqdymfomuwic"]
 
 [ext_resource type="Texture2D" uid="uid://c20iteqnrfl3i" path="res://Assets/Sprites/gf_of_the player/Idle.png" id="1_2em0x"]
+[ext_resource type="Script" uid="uid://da1uikjiu2dsp" path="res://Assets/Area/Scenes/player_gf.gd" id="1_87cbn"]
+[ext_resource type="Texture2D" uid="uid://y5c3yi0xgakq" path="res://Assets/Sprites/gf_of_the player/Sprite_Sheets_Heart__Ready_for_games-removebg-preview.png" id="2_tlsn4"]
+[ext_resource type="AudioStream" uid="uid://px4fvo5ql1cc" path="res://Assets/MUSIC/romantic_meetup.mp3" id="4_4n463"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlsn4"]
 atlas = ExtResource("1_2em0x")
@@ -59,15 +62,136 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n463"]
+size = Vector2(43.25, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upl11"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(20, 34, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx02d"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(168, 34, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pojy"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(316, 34, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5148"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(464, 34, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fov14"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(20, 158, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srnct"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(168, 158, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65nxo"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(316, 158, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwlte"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(464, 158, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw7fg"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(20, 282, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhbww"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(168, 282, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipbl0"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(316, 282, 148, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbiy5"]
+atlas = ExtResource("2_tlsn4")
+region = Rect2(464, 282, 148, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhdq1"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_upl11")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_kx02d")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_8pojy")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_u5148")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_fov14")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_srnct")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_65nxo")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_bwlte")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_jw7fg")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_yhbww")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ipbl0")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tbiy5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="player_gf" type="CharacterBody2D"]
+script = ExtResource("1_87cbn")
 
 [node name="piviot" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="piviot"]
-position = Vector2(-5, -64)
+position = Vector2(-17, -62)
 scale = Vector2(1.031, 1.031)
 sprite_frames = SubResource("SpriteFrames_upl11")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.4200637
 flip_h = true
+
+[node name="Area2D" type="Area2D" parent="piviot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piviot/Area2D"]
+position = Vector2(-14.375, -31)
+shape = SubResource("RectangleShape2D_4n463")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10.000004, -73)
+scale = Vector2(0.31451616, 0.31451613)
+sprite_frames = SubResource("SpriteFrames_nhdq1")
+frame_progress = 0.63361144
+
+[node name="Romantic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4n463")
+volume_db = -15.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -91.0
+offset_top = -109.0
+offset_right = 89.0
+offset_bottom = -86.0
+text = "You founded me dear !!"
+
+[connection signal="body_entered" from="piviot/Area2D" to="." method="_on_area_2d_body_entered"]

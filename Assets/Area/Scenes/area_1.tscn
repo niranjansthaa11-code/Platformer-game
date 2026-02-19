@@ -509,7 +509,7 @@ metadata/_edit_group_ = true
 position = Vector2(35, -89)
 
 [node name="Player" parent="." instance=ExtResource("2_61qy2")]
-position = Vector2(53, -34)
+position = Vector2(3229, -481)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_hlyj4")]
 
