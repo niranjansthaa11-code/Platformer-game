@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dikuqririw5xo"]
+[gd_scene load_steps=4 format=3 uid="uid://dikuqririw5xo"]
 
 [ext_resource type="FontFile" uid="uid://dvh0cmmo4y4wl" path="res://Assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_0d6se"]
+[ext_resource type="Script" uid="uid://botfa7o1tb7qg" path="res://Assets/Scripts/music_label.gd" id="1_pgm7c"]
 [ext_resource type="Script" uid="uid://cgcitl6683kqr" path="res://Assets/Scripts/music_box.gd" id="2_gcihj"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_pgm7c")
 
 [node name="CheckBox" type="CheckBox" parent="."]
 texture_filter = 2

@@ -329,22 +329,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 768
 platform_on_leave = 2
 script = ExtResource("1_0er46")
 jump_force = 400.0
 
-[node name="Pivot" type="Node2D" parent="."]
+[node name="Pivot" type="Node2D" parent="." groups=["Player"]]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot" groups=["Player"]]
 position = Vector2(10, -67.00001)
 scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_lmg7l")
 animation = &"attack"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2(-0.9999995, -31)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_34p3m")
@@ -356,7 +356,7 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="AnimatedSprite2D1" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D1" type="AnimatedSprite2D" parent="." groups=["Player"]]
 position = Vector2(0.99999905, -28.000006)
 scale = Vector2(0.13867186, 0.16875)
 sprite_frames = SubResource("SpriteFrames_rokcs")
