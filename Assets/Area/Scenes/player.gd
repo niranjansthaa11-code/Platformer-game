@@ -11,16 +11,17 @@ class_name Player
 @onready var spwan_sprite = $AnimatedSprite2D1
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
-# --- Timer Nodes (Make sure these paths match your scene!) ---
+#timer node
 @onready var timer = $Timer
 @onready var label = $CanvasLayer/TimerLabel
 @onready var bar = $CanvasLayer/TimerBar
 
-## --- State Variables ---
+#variables
+var is_dead: bool = false
 var is_attacking: bool = false
 
 func _ready():
-	# --- Timer Initialization ---
+
 	if bar and timer:
 		bar.max_value = timer.wait_time
 		bar.value = timer.wait_time
@@ -116,3 +117,25 @@ func attack() -> void:
 func play_anim(anim_name: String) -> void:
 	if animated_sprite.animation != anim_name:
 		animated_sprite.play(anim_name)
+func die() -> void:
+	if is_dead: return 
+	is_dead = true
+	is_attacking = true 
+	
+	
+	if animated_sprite.sprite_frames.has_animation("death"):
+		animated_sprite.play("death")
+	else:
+		#make the player sink 
+		var death_tween = create_tween()
+		death_tween.tween_property(self, "modulate", Color.RED, 0.2)
+		death_tween.tween_property(self, "scale", Vector2.ZERO, 0.5)
+	
+
+	Engine.time_scale = 0.1
+	await get_tree().create_timer(0.05).timeout 
+	Engine.time_scale = 1.0
+	MusicManager.stop_music()
+	
+	await get_tree().create_timer(1.0).timeout
+	get_tree().reload_current_scene()
