@@ -10,6 +10,7 @@ class_name Player
 @onready var animated_sprite: AnimatedSprite2D = $Pivot/AnimatedSprite2D
 @onready var spwan_sprite = $AnimatedSprite2D1
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var spwan_sound: AudioStreamPlayer2D = $spwan
 
 #timer node
 @onready var timer = $Timer
@@ -33,10 +34,12 @@ func _ready():
 
 	# --- Spawn Animation Logic ---
 	spwan_sprite.show()
+	spwan_sound.play()
 	spwan_sprite.modulate.a = 1 
 	animated_sprite.show()
 	animated_sprite.modulate.a = 0.0 
 	is_attacking = true
+	
 	spwan_sprite.play("spawn")
 	await spwan_sprite.animation_finished
 	

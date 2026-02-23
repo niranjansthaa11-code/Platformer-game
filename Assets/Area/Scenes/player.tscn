@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://hbmyji07l7cr"]
+[gd_scene load_steps=64 format=3 uid="uid://hbmyji07l7cr"]
 
 [ext_resource type="Script" uid="uid://dc36xdypsvrsu" path="res://Assets/Area/Scenes/player.gd" id="1_0er46"]
 [ext_resource type="Texture2D" uid="uid://1frsek8advj2" path="res://Assets/Sprites/Main_player/Fire Wizard/Idle.png" id="1_hww1u"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://deyt6byqgdn3p" path="res://PNG/Explosion_5/Explosion_9.png" id="15_xjdj7"]
 [ext_resource type="Texture2D" uid="uid://pbo0pkm5f65v" path="res://PNG/Explosion_5/Explosion_10.png" id="16_rhu6i"]
 [ext_resource type="AudioStream" uid="uid://dxftfxsrh76d5" path="res://Assets/MUSIC/jump.mp3" id="17_vyfjt"]
+[ext_resource type="AudioStream" uid="uid://cfibvq4qwhf6c" path="res://Assets/MUSIC/spwan_sound.mp3" id="19_6tm47"]
+[ext_resource type="AudioStream" uid="uid://u72geh2lq8j6" path="res://Assets/MUSIC/dying2.mp3" id="20_qu1u8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udsrf"]
 atlas = ExtResource("2_34p3m")
@@ -391,7 +393,7 @@ scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_lmg7l")
 animation = &"dead"
 autoplay = "idle"
-frame_progress = 0.31394485
+frame_progress = 0.44619256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2(-0.9999995, -31)
@@ -416,3 +418,10 @@ frame_progress = 1.0
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_vyfjt")
+
+[node name="spwan" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_6tm47")
+
+[node name="dying" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("20_qu1u8")

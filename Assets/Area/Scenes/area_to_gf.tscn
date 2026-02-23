@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1sfikn065n2g"]
+[gd_scene load_steps=15 format=3 uid="uid://d1sfikn065n2g"]
 
 [ext_resource type="Script" uid="uid://bmefvank7wrhd" path="res://Assets/Scripts/area_to_gf.gd" id="1_cxrjs"]
 [ext_resource type="Texture2D" uid="uid://td5hjml8virm" path="res://Assets/Sprites/gf_of_the player/portal.png" id="2_268ms"]
 [ext_resource type="Texture2D" uid="uid://cvurwfx7s4on6" path="res://Assets/portal/Purple Portal Sprite Sheet (1).png" id="3_268ms"]
+[ext_resource type="AudioStream" uid="uid://buthakk4xsb7g" path="res://Assets/MUSIC/portal.mp3" id="4_3u25w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3u25w"]
-radius = 7.0
-height = 38.0
+radius = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7ykh"]
 atlas = ExtResource("3_268ms")
@@ -91,5 +91,9 @@ frame_progress = 0.9896027
 
 [node name="DestinationPoint" type="Marker2D" parent="."]
 position = Vector2(-54, 0)
+
+[node name="op" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3u25w")
+volume_db = 12.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
