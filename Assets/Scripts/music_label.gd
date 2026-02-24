@@ -12,6 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/Area/Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Assets/Area/Scenes/end_menu.tscn")
 	MusicManager.stop_music()
 	pass # Replace with function body.

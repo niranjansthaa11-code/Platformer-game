@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f3tad54luarf"
+path="res://.godot/imported/Crying woman Sound effect #effects #sound #shorts.mp3-acc0cc8b1b86f7b17244e2113d7aeac1.mp3str"
+
+[deps]
+
+source_file="res://Assets/MUSIC/Crying woman Sound effect #effects #sound #shorts.mp3"
+dest_files=["res://.godot/imported/Crying woman Sound effect #effects #sound #shorts.mp3-acc0cc8b1b86f7b17244e2113d7aeac1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

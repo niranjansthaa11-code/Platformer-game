@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == 'player' or body.name == 'Player':
 		dying.play()
+		MusicManager.stop_music()
 		body.die()
+		
 		
 	pass # Replace with function body.

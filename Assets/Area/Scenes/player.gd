@@ -138,7 +138,7 @@ func die() -> void:
 	Engine.time_scale = 0.1
 	await get_tree().create_timer(0.05).timeout 
 	Engine.time_scale = 1.0
-	MusicManager.stop_music()
 	
 	await get_tree().create_timer(1.0).timeout
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Assets/Area/Scenes/end_menu.tscn")
+	MusicManager.play_music()

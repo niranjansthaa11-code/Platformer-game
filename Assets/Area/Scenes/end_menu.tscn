@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://b72rxx8yptd38"]
+
+[ext_resource type="Script" uid="uid://b5cd8jly51p4x" path="res://Assets/Area/Scenes/end_menu.gd" id="1_4edjn"]
+[ext_resource type="Texture2D" uid="uid://bww0hca5fcn77" path="res://Assets/portal/Screenshot 2026-02-24 152337.png" id="1_nbfv4"]
+[ext_resource type="FontFile" uid="uid://bbiyqvmakw2x5" path="res://Assets/fonts/SuperMaples-2vR2w.ttf" id="2_4edjn"]
+[ext_resource type="AudioStream" uid="uid://f3tad54luarf" path="res://Assets/MUSIC/Crying woman Sound effect #effects #sound #shorts.mp3" id="4_bhrx3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhrx3"]
+texture = ExtResource("1_nbfv4")
+modulate_color = Color(0.1361005, 0.1361005, 0.1361005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1isj"]
+bg_color = Color(0.99215686, 0.7647059, 0.6313726, 1)
+
+[node name="End_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4edjn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhrx3")
+
+[node name="MSG" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -189.0
+offset_right = 345.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.07058824, 0.12941177, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.42352942)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_4edjn")
+theme_override_font_sizes/font_size = 60
+text = "YOU COULDNT FIND YOUR GF BRO.."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -64.0
+offset_right = 138.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="New Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.021434566, 0.021434668, 0.021434598, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_x1isj")
+text = "New Game"
+
+[node name="Main Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.027824445, 0.027824577, 0.02782445, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_x1isj")
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.044981703, 0.01924786, 0.006061167, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_x1isj")
+text = "Exit the game "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bhrx3")
+volume_db = 20.0
+parameters/looping = true
+
+[connection signal="pressed" from="VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -185,7 +185,7 @@ frame_progress = 0.70072794
 
 [node name="Romantic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_4n463")
-volume_db = -15.0
+volume_db = 10.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = -91.0

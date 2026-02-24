@@ -730,9 +730,9 @@ point_count = 2
 [sub_resource type="Curve2D" id="Curve2D_irth0"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -22.04358, -3.636364, 0, 0, 0, 0, 16.956543, 17.272726, 0, 0, 0, 0, 58.5, 29.090908, 0, 0, 0, 0, 182.2826, 35.454544)
+"points": PackedVector2Array(0, 0, 0, 0, -21.195679, -8.181818, 0, 0, 0, 0, 12.717407, -2.7272725, 0, 0, 0, 0, 32.217407, 4.5454464, 0, 0, 0, 0, 86.478516, 12.727264, 0, 0, 0, 0, 180.58691, 21.818172)
 }
-point_count = 4
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_ye31b"]
 resource_local_to_scene = true
@@ -790,7 +790,7 @@ offset_bottom = 98.0
 text = "GO AHEAD 🤘"
 
 [node name="Player" parent="." instance=ExtResource("2_61qy2")]
-position = Vector2(166, -38)
+position = Vector2(64, -37)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_hlyj4")]
 
@@ -836,6 +836,7 @@ Total_time = 1.0
 [node name="Moving_platforms5" parent="Platforms" instance=ExtResource("4_eyujy")]
 position = Vector2(2190, -129)
 curve = SubResource("Curve2D_irhv8")
+Total_time = 0.8
 
 [node name="Moving_platforms6" parent="Platforms" instance=ExtResource("4_eyujy")]
 position = Vector2(2117, 220)
@@ -843,7 +844,7 @@ curve = SubResource("Curve2D_2pksx")
 Total_time = 1.0
 
 [node name="Moving_platforms7" parent="Platforms" instance=ExtResource("4_eyujy")]
-position = Vector2(2382.9998, -95.99999)
+position = Vector2(2367.9998, -81.99999)
 scale = Vector2(1.1794872, 1.1)
 curve = SubResource("Curve2D_irth0")
 Total_time = 1.5
@@ -998,11 +999,11 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-824.00006, -72.66667)
 
 [node name="Area_TO GF4" parent="portal_controller" instance=ExtResource("9_w7nbb")]
-position = Vector2(4702, 140)
+position = Vector2(4739, 133)
 scale = Vector2(1.5, 1.5)
 
 [node name="DestinationPoint" parent="portal_controller/Area_TO GF4" index="3"]
-position = Vector2(-2281, -125)
+position = Vector2(-1492, -76)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 80.0
