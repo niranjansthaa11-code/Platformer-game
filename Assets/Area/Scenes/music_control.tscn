@@ -1,21 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://dikuqririw5xo"]
+[gd_scene load_steps=10 format=3 uid="uid://dikuqririw5xo"]
 
-[ext_resource type="FontFile" uid="uid://dvh0cmmo4y4wl" path="res://Assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_0d6se"]
 [ext_resource type="Script" uid="uid://botfa7o1tb7qg" path="res://Assets/Scripts/music_label.gd" id="1_pgm7c"]
 [ext_resource type="Script" uid="uid://cgcitl6683kqr" path="res://Assets/Scripts/music_box.gd" id="2_gcihj"]
+[ext_resource type="FontFile" uid="uid://bbiyqvmakw2x5" path="res://Assets/fonts/SuperMaples-2vR2w.ttf" id="2_pgm7c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgm7c"]
+bg_color = Color(0.4392157, 0.5882353, 0.9254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niu73"]
+bg_color = Color(0.4381718, 0.5891471, 0.92518264, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7eww"]
+bg_color = Color(0.56810135, 0.64352393, 0.21966344, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j61ns"]
+bg_color = Color(0.4392157, 0.5882353, 0.9254902, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgm7c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3gr"]
+bg_color = Color(0.9242012, 0.052910857, 0.04891783, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_pgm7c")
 
 [node name="CheckBox" type="CheckBox" parent="."]
 texture_filter = 2
-offset_left = -6.0
-offset_top = -19.0
-offset_right = 68.0
-offset_bottom = 12.0
-theme_override_fonts/font = ExtResource("1_0d6se")
+offset_right = 74.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.009227808, 0.062334843, 0.04841233, 1)
+theme_override_colors/font_pressed_color = Color(0.018202474, 0.0087822545, 0.0015658617, 1)
+theme_override_fonts/font = ExtResource("2_pgm7c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pgm7c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_niu73")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7eww")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j61ns")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pgm7c")
 button_pressed = true
 text = "Music"
 script = ExtResource("2_gcihj")
 
+[node name="Button" type="Button" parent="."]
+offset_right = 75.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("2_pgm7c")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y3gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3y3gr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y3gr")
+text = "  Exit   
+"
+
 [connection signal="toggled" from="CheckBox" to="CheckBox" method="_on_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

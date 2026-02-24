@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
+	MusicManager.play_music()
 	get_tree().change_scene_to_file("res://Assets/Area/Scenes/area_1.tscn")
 	pass # Replace with function body.
 

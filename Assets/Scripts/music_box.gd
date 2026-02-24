@@ -2,6 +2,7 @@ extends CheckBox
 
 func _ready() -> void:
 	
+	
 	if MusicManager.has_method("is_paused"):
 		button_pressed = not MusicManager.is_paused()
 	else:
