@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bc3k6xctt8j3j"]
+[gd_scene load_steps=30 format=3 uid="uid://bc3k6xctt8j3j"]
 
 [ext_resource type="Script" uid="uid://b37qxyxy43cc2" path="res://Assets/Scripts/main.gd" id="1_irhv8"]
 [ext_resource type="Texture2D" uid="uid://csdub4aqmpcvv" path="res://Assets/Sprites/Tiles/Tile-Atlas 16x16.png" id="1_s6akc"]
@@ -681,6 +681,13 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_77f64"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4, 15, 0, 0, 0, 0, 3, 331)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_d1d5t"]
 resource_local_to_scene = true
 _data = {
@@ -774,14 +781,6 @@ position = Vector2(29, -95)
 
 [node name="Labels" type="Node2D" parent="."]
 
-[node name="start the game" type="Label" parent="Labels"]
-offset_left = 355.0
-offset_top = -43.0
-offset_right = 619.0
-offset_bottom = -20.0
-theme_override_fonts/font = ExtResource("5_0j8ti")
-text = "You can pass through this violent "
-
 [node name="Label" type="Label" parent="Labels"]
 offset_left = 3507.0
 offset_top = 75.0
@@ -790,7 +789,7 @@ offset_bottom = 98.0
 text = "GO AHEAD 🤘"
 
 [node name="Player" parent="." instance=ExtResource("2_61qy2")]
-position = Vector2(2235, 43)
+position = Vector2(166, -38)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_hlyj4")]
 
@@ -814,7 +813,7 @@ Total_time = 2.0
 
 [node name="Moving_platforms2" parent="Platforms/Moving_platforms2" instance=ExtResource("4_eyujy")]
 position = Vector2(3010, 139)
-curve = SubResource("Curve2D_ck07g")
+curve = SubResource("Curve2D_77f64")
 Total_time = 0.5
 
 [node name="Moving_platforms3" parent="Platforms" instance=ExtResource("4_eyujy")]
@@ -857,7 +856,7 @@ position = Vector2(3334, -480)
 [node name="FIRES_MANAGER" type="Node2D" parent="."]
 
 [node name="FIRES26" parent="FIRES_MANAGER" instance=ExtResource("8_libo4")]
-position = Vector2(1703, 295)
+position = Vector2(1709, 295)
 
 [node name="FIRES" parent="FIRES_MANAGER" instance=ExtResource("8_libo4")]
 position = Vector2(661, 161)

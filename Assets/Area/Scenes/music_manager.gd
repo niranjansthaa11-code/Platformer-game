@@ -1,6 +1,7 @@
 extends Node2D 
 
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+var is_muted: bool = false
 
 func _ready():
 	play_music()
@@ -18,3 +19,7 @@ func change_track(new_audio_stream: AudioStream):
 func set_paused(should_pause: bool):
 	if audio_player:
 		audio_player.stream_paused = should_pause
+func toggle_mute():
+	is_muted = !is_muted
+	# 0 is the index of the "Master" audio bus
+	AudioServer.set_bus_mute(0, is_muted)

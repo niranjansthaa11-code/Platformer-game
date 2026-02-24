@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="platformer_game"
-run/main_scene="uid://bc3k6xctt8j3j"
+run/main_scene="uid://c8yu0fm0od1vh"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [autoload]
